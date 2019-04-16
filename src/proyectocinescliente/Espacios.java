@@ -71,9 +71,9 @@ public class Espacios extends javax.swing.JFrame {
         jButton22 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btmRegresar = new javax.swing.JButton();
+        btmContinuar = new javax.swing.JButton();
+        lblPantalla = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -175,14 +175,21 @@ public class Espacios extends javax.swing.JFrame {
         jButton24.setMargin(new java.awt.Insets(1, 1, 1, 1));
         jPanel1.add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 50, 50));
 
-        jButton25.setText("jButton25");
-        jPanel1.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, -1, -1));
+        btmRegresar.setText("Regresar");
+        jPanel1.add(btmRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
-        jButton26.setText("jButton26");
-        jPanel1.add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, -1, -1));
+        btmContinuar.setText("Continuar");
+        btmContinuar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmContinuarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btmContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, -1, -1));
 
-        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 400));
+        lblPantalla.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblPantalla.setText("                      PANTALLA");
+        lblPantalla.setToolTipText("");
+        jPanel1.add(lblPantalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 430, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,6 +204,10 @@ public class Espacios extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btmContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmContinuarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btmContinuarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,6 +245,8 @@ public class Espacios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btmContinuar;
+    private javax.swing.JButton btmRegresar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -251,8 +264,6 @@ public class Espacios extends javax.swing.JFrame {
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -260,7 +271,7 @@ public class Espacios extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblPantalla;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package Logica;
-
+import UAPI.Service;
+import UAPI.Service_Service;
 /**
  *
  * @author PC
@@ -12,5 +13,9 @@ package Logica;
 public class SOUP {
     //siiiiiiiiii
     //bueno
-//    public static Service service = new Service_Service().getServicePort();
+    public static Service service = new Service_Service().getServicePort();
+    
+    public void s(){
+    
+    }
 }

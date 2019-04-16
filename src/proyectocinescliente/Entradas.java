@@ -19,7 +19,7 @@ public class Entradas extends javax.swing.JFrame {
      */
     public Entradas() {
         initComponents();
-        super.setTitle("BOLETERIA");
+        super.setTitle("Cine Cinepolio");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,7 +33,6 @@ public class Entradas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jComboBoxPeliculas = new javax.swing.JComboBox<>();
         jComboBoxHora = new javax.swing.JComboBox<>();
-        jLabelPelicula = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -49,6 +48,7 @@ public class Entradas extends javax.swing.JFrame {
         btmContinuar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,9 +67,6 @@ public class Entradas extends javax.swing.JFrame {
 
         jComboBoxHora.setBackground(new java.awt.Color(204, 255, 255));
         jPanel1.add(jComboBoxHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 100, 30));
-
-        jLabelPelicula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jLabelPelicula, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 182, 267));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("PRECIO DE CADA BOLETO");
@@ -120,7 +117,7 @@ public class Entradas extends javax.swing.JFrame {
         });
         jPanel1.add(jTextFieldCantidadDeBoletosAdultos, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 180, 25, -1));
 
-        jTextPane1.setText("NOTA:  CADA   SALA   TIENE   SUS   ACIENTOS   DEBIDAMENTE   NUMERADOS,   POR   FAVOR   TOMAR   EL   ACIENTTO   CORRECTO.");
+        jTextPane1.setText("NOTA:  CADA   SALA   TIENE   SUS   ACIENTOS   DEBIDAMENTE   NUMERADOS,   POR   FAVOR   TOMAR   EL   ACIENTO   CORRECTO.");
         jTextPane1.setToolTipText("");
         jScrollPane1.setViewportView(jTextPane1);
 
@@ -150,7 +147,8 @@ public class Entradas extends javax.swing.JFrame {
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/Fondo Blanco.jpg"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 550, 270));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 580, 270));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 240, 270));
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/fondo.jpg"))); // NOI18N
@@ -160,122 +158,9 @@ public class Entradas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    void AgregarAComboboxPelicula() {
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        modelo.addElement("Seleccione");
-        modelo.addElement("Avengers");
-        modelo.addElement("La Llorona");
-        modelo.addElement("Dumbo");
-        modelo.addElement("Capitana Marvel");
-        modelo.addElement("Shazam");
-
-        jComboBoxPeliculas.setModel(modelo);
-
-    }
-
-    void seleccionPelicula() {
-        int combo;
-        combo = jComboBoxPeliculas.getSelectedIndex();
-        if (combo == 1 || combo == 2 || combo == 3 || combo == 4 || combo == 5) {    
-        } else {
-            jRadioButtonEfectivo.setEnabled(false);
-            jRadioButtonTCredito.setEnabled(false);
-            jTextFieldCantidadDeBoletosAdultos.setEnabled(false);
-            btmContinuar.setEnabled(false);
-        }
-    }
-    
-    void caratulas() {
-        int combo;
-        combo = jComboBoxPeliculas.getSelectedIndex();
-        switch (combo) {
-            case 0: {
-                ImageIcon i = new ImageIcon("");
-                jLabelPelicula.setIcon(i);
-                break;
-            }
-            case 1: {
-                LimCantidad();
-                ImageIcon i = new ImageIcon("src/PNG/Avengers.jpg");
-                jLabelPelicula.setIcon(i);
-                DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-                modelo.addElement("Seleccione");
-                modelo.addElement("4:00 pm");
-                modelo.addElement("6:00 pm");
-                modelo.addElement("8:00 pm");
-                jComboBoxHora.setModel(modelo);
-                break;
-            }
-            case 2: {
-                LimCantidad();
-                ImageIcon i = new ImageIcon("src/PNG/La Llorona.jpg");
-                jLabelPelicula.setIcon(i);
-                DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-                modelo.addElement("Seleccione");
-                modelo.addElement("5:00 pm");
-                modelo.addElement("7:00 pm");
-                modelo.addElement("9:00 pm");
-                jComboBoxHora.setModel(modelo);
-                break;
-            }
-            case 3: {
-                LimCantidad();
-                ImageIcon i = new ImageIcon("src/PNG/Dumbo.jpg");
-                jLabelPelicula.setIcon(i);
-                DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-                modelo.addElement("Seleccione");
-                modelo.addElement("12:00 pm");
-                modelo.addElement("2:00 pm");
-                modelo.addElement("4:00 pm");
-                jComboBoxHora.setModel(modelo);
-                break;
-            }
-            case 4: {
-                LimCantidad();
-                ImageIcon i = new ImageIcon("src/PNG/Capitana Marvel.jpg");
-                jLabelPelicula.setIcon(i);
-                DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-                modelo.addElement("Seleccione");
-                modelo.addElement("1:00 pm");
-                modelo.addElement("3:00 pm");
-                modelo.addElement("6:30 pm");
-                jComboBoxHora.setModel(modelo);
-                break;
-            }
-            case 5: {
-                LimCantidad();
-                ImageIcon i = new ImageIcon("src/PNG/Shazam.jpg");
-                jLabelPelicula.setIcon(i);
-                DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-                modelo.addElement("Seleccione");
-                modelo.addElement("2:00 pm");
-                modelo.addElement("5:00 pm");
-                modelo.addElement("8:00 pm");
-                jComboBoxHora.setModel(modelo);
-                break;
-            }
-            default:
-                break;
-        }
-    }
-    
-    void LimCantidad() {
-        jTextFieldCantidadDeBoletosAdultos.setText("");
-    }
-    
-    void limpiar() {
-        ImageIcon i = new ImageIcon("");
-        jLabelPelicula.setIcon(i);
-        jTextFieldCantidadDeBoletosAdultos.setText("");
-        jComboBoxPeliculas.removeAllItems();
-        jComboBoxHora.removeAllItems();
-    }
-    
-    
+   
     private void jComboBoxPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPeliculasActionPerformed
-        seleccionPelicula();
-        caratulas();
+
     }//GEN-LAST:event_jComboBoxPeliculasActionPerformed
 
     private void jRadioButtonEfectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonEfectivoActionPerformed
@@ -291,11 +176,15 @@ public class Entradas extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldCantidadDeBoletosAdultosActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btmContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmContinuarActionPerformed
-        // TODO add your handling code here:
+        Espacios acientos = new Espacios();
+        acientos.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btmContinuarActionPerformed
 
     /**
@@ -347,7 +236,7 @@ public class Entradas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    public static javax.swing.JLabel jLabelPelicula;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JRadioButton jRadioButtonEfectivo;
     public static javax.swing.JRadioButton jRadioButtonTCredito;

@@ -21,6 +21,7 @@ public class Espacios extends javax.swing.JFrame {
      */
     public Espacios() {
         initComponents();
+        super.setTitle("Cine Cinepolio");
        cargar();
     }
     public void cargar(){
@@ -74,6 +75,7 @@ public class Espacios extends javax.swing.JFrame {
         btmRegresar = new javax.swing.JButton();
         btmContinuar = new javax.swing.JButton();
         lblPantalla = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -176,6 +178,11 @@ public class Espacios extends javax.swing.JFrame {
         jPanel1.add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 50, 50));
 
         btmRegresar.setText("Regresar");
+        btmRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmRegresarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btmRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
         btmContinuar.setText("Continuar");
@@ -187,9 +194,13 @@ public class Espacios extends javax.swing.JFrame {
         jPanel1.add(btmContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, -1, -1));
 
         lblPantalla.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblPantalla.setText("                      PANTALLA");
+        lblPantalla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/Pantalla (2).png"))); // NOI18N
+        lblPantalla.setText("                      ");
         lblPantalla.setToolTipText("");
-        jPanel1.add(lblPantalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 430, 30));
+        jPanel1.add(lblPantalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 450, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/fondo.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -208,6 +219,12 @@ public class Espacios extends javax.swing.JFrame {
     private void btmContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmContinuarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btmContinuarActionPerformed
+
+    private void btmRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmRegresarActionPerformed
+        Entradas boleteria = new Entradas();
+        boleteria.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btmRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,6 +288,7 @@ public class Espacios extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblPantalla;
     // End of variables declaration//GEN-END:variables

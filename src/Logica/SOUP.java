@@ -16,6 +16,6 @@ public class SOUP {
     public static Service service = new Service_Service().getServicePort();
     
     public void s(){
-    
+        System.out.println(service.nuevoCliente("Oscar", 402390326, "ocampose", "ocampose"));
     }
 }

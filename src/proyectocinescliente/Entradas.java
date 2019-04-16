@@ -19,8 +19,10 @@ public class Entradas extends javax.swing.JFrame {
      */
     public Entradas() {
         initComponents();
-        super.setTitle("Cine Cinepolio");
+        this.setLocationRelativeTo(null);
+        super.setTitle("Cinepolio");
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -66,6 +68,11 @@ public class Entradas extends javax.swing.JFrame {
         jPanel1.add(jComboBoxPeliculas, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 41, 130, -1));
 
         jComboBoxHora.setBackground(new java.awt.Color(204, 255, 255));
+        jComboBoxHora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxHoraActionPerformed(evt);
+            }
+        });
         jPanel1.add(jComboBoxHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 100, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -186,6 +193,10 @@ public class Entradas extends javax.swing.JFrame {
         acientos.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btmContinuarActionPerformed
+
+    private void jComboBoxHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxHoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxHoraActionPerformed
 
     /**
      * @param args the command line arguments

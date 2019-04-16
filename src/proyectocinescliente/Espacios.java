@@ -21,7 +21,8 @@ public class Espacios extends javax.swing.JFrame {
      */
     public Espacios() {
         initComponents();
-        super.setTitle("Cine Cinepolio");
+        this.setLocationRelativeTo(null);
+        super.setTitle("Cinepolio");
        cargar();
     }
     public void cargar(){

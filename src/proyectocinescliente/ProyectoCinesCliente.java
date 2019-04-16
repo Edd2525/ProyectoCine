@@ -5,6 +5,8 @@
  */
 package proyectocinescliente;
 
+import static Logica.SOUP.service;
+
 /**
  *
  * @author Campos Espinoza
@@ -16,6 +18,8 @@ public class ProyectoCinesCliente {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+//        System.out.println(service.nuevoCliente("Oscar", 402390326, "ocampose", "ocampose"));
+        Login login = new Login();
+        login.setVisible(true);
     }
-    
 }

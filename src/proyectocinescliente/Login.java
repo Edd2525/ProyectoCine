@@ -5,6 +5,9 @@
  */
 package proyectocinescliente;
 
+import static Logica.SOUP.service;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Campos Espinoza
@@ -16,7 +19,8 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        super.setTitle("Cine Cinepolio");
+        this.setLocationRelativeTo(null);
+        super.setTitle("Cinepolio");
     }
 
     /**
@@ -31,7 +35,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lblContraseña = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        lblUsuario = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
         pfContraseña = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         btmEntrar = new javax.swing.JButton();
@@ -52,7 +56,13 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("NOMBRE DE USUARIO");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 170, -1));
-        jPanel1.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 180, -1));
+
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 180, -1));
 
         pfContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,17 +119,25 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void pfContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pfContraseñaActionPerformed
-        
+
     }//GEN-LAST:event_pfContraseñaActionPerformed
 
     private void btmEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmEntrarActionPerformed
-        Entradas boleteria = new Entradas();
-        boleteria.setVisible(true);
-        this.dispose();
+        if (service.login(txtUsuario.getText(), pfContraseña.getText())) {
+            try {
+            Entradas boleteria = new Entradas();
+            boleteria.setVisible(true);
+            this.dispose();
+                } catch (Exception e) {
+                    System.out.println("rip");
+            }
+            }else{
+            JOptionPane.showMessageDialog(null, "Error.. Vuelva intentarlo");
+        }
     }//GEN-LAST:event_btmEntrarActionPerformed
 
     private void btmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmSalirActionPerformed
-       this.dispose();
+        this.dispose();
     }//GEN-LAST:event_btmSalirActionPerformed
 
     private void btmNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmNuevoUsuarioActionPerformed
@@ -127,6 +145,10 @@ public class Login extends javax.swing.JFrame {
         registrar.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btmNuevoUsuarioActionPerformed
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,7 +194,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblContraseña;
-    private javax.swing.JTextField lblUsuario;
     private javax.swing.JPasswordField pfContraseña;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

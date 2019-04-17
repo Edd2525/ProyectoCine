@@ -13,7 +13,12 @@ import javax.swing.JButton;
  * @author Campos Espinoza
  */
 public class Espacios extends javax.swing.JFrame {
-
+    int Posicion_Pelicula;
+    int Campos;
+    int Sala;
+    int Tanda;
+    int Pago;
+    
     int asientos[][] = new int[6][4];
     ImageIcon x = new ImageIcon("C:\\Users\\Campos Espinoza\\Documents\\NetBeansProjects\\ProyectoCinesCliente\\src\\PNG\\Ocupada.png");
     /**
@@ -24,6 +29,7 @@ public class Espacios extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         super.setTitle("Cinepolio");
        cargar();
+        System.out.println(this.Posicion_Pelicula);
     }
     public void cargar(){
         for (int i = 0; i < 4; i++) {
@@ -37,8 +43,17 @@ public class Espacios extends javax.swing.JFrame {
         //this.jButton1.setIcon(x);
         this.jButton1.setEnabled(false);
     }
-
-   
+    
+    public void modificar(int x, int y){
+        if(x==0 && y==0){
+            this.btm00.setEnabled(false);
+        }
+        if(x==0 && y==0){
+//            this.btm01.setEnabled(false);
+        }
+       
+    }
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,7 +66,7 @@ public class Espacios extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btm00 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -77,6 +92,7 @@ public class Espacios extends javax.swing.JFrame {
         btmContinuar = new javax.swing.JButton();
         lblPantalla = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        trampav2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,9 +106,14 @@ public class Espacios extends javax.swing.JFrame {
         jButton2.setMargin(new java.awt.Insets(1, 1, 1, 1));
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 50, 50));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/Libre.png"))); // NOI18N
-        jButton3.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 50, 50));
+        btm00.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/Libre.png"))); // NOI18N
+        btm00.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        btm00.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btm00ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btm00, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 50, 50));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/Libre.png"))); // NOI18N
         jButton4.setMargin(new java.awt.Insets(1, 1, 1, 1));
@@ -186,13 +207,13 @@ public class Espacios extends javax.swing.JFrame {
         });
         jPanel1.add(btmRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
-        btmContinuar.setText("Continuar");
+        btmContinuar.setText("CONFIRMAR");
         btmContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btmContinuarActionPerformed(evt);
             }
         });
-        jPanel1.add(btmContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, -1, -1));
+        jPanel1.add(btmContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, -1, -1));
 
         lblPantalla.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblPantalla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/Pantalla (2).png"))); // NOI18N
@@ -201,7 +222,10 @@ public class Espacios extends javax.swing.JFrame {
         jPanel1.add(lblPantalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 450, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/fondo.jpg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 400));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 400));
+
+        trampav2.setText("jLabel3");
+        jPanel1.add(trampav2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -219,6 +243,9 @@ public class Espacios extends javax.swing.JFrame {
 
     private void btmContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmContinuarActionPerformed
         // TODO add your handling code here:
+        Factura factura = new Factura();
+        factura.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btmContinuarActionPerformed
 
     private void btmRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmRegresarActionPerformed
@@ -226,6 +253,10 @@ public class Espacios extends javax.swing.JFrame {
         boleteria.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btmRegresarActionPerformed
+
+    private void btm00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm00ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btm00ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,6 +294,7 @@ public class Espacios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btm00;
     private javax.swing.JButton btmContinuar;
     private javax.swing.JButton btmRegresar;
     private javax.swing.JButton jButton1;
@@ -282,7 +314,6 @@ public class Espacios extends javax.swing.JFrame {
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -292,5 +323,6 @@ public class Espacios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblPantalla;
+    public javax.swing.JLabel trampav2;
     // End of variables declaration//GEN-END:variables
 }

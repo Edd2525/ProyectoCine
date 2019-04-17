@@ -27,6 +27,7 @@ public class Boton extends JButton implements ActionListener{
     
     
     
+    
     public Boton(int posx, int posy){
         super.setBounds(posx, posy, dimencion, dimencion);
         super.addActionListener(this);

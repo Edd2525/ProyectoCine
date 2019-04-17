@@ -5,17 +5,36 @@
  */
 package proyectocinescliente;
 
+import static Logica.SOUP.service;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import static proyectocinescliente.Entradas.Campos;
+import static proyectocinescliente.Entradas.seleccionada;
 /**
  *
  * @author Campos Espinoza
  */
 public class Factura extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Factura
      */
     public Factura() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        super.setTitle("Cinepolio");  
+        Date date = new Date();
+        DateFormat hourFormat = new SimpleDateFormat("HH:mm");
+        this.lblHora.setText("Hora: "+hourFormat.format(date));
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        this.lblFecha.setText("Fecha: "+dateFormat.format(date));
+        service.getNombre(seleccionada);
+        this.lblPelicula.setText(service.getNombre(seleccionada));
+        this.lblAcientos.setText("" + Campos);
+        this.lblSala.setText("" +  seleccionada);
+        this.lblTanda.setText(service.getHora(seleccionada));   
+        this.lblTotalPagar.setText("₡" + (service.getPrecio(seleccionada)* Campos));
     }
 
     /**
@@ -28,25 +47,123 @@ public class Factura extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblHora = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        lblSala = new javax.swing.JLabel();
+        lblTanda = new javax.swing.JLabel();
+        lblAcientos = new javax.swing.JLabel();
+        lblTotalPagar = new javax.swing.JLabel();
+        lblPelicula = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
+        trampa = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
-        );
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("TIQUETE CINEPOLIO");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 260, 30));
+
+        lblHora.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 140, 20));
+
+        lblFecha.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 130, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("SALA.........................");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("TANDA.....................");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("ACIENTOS..............");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("GRACIAS POR SU PREFERENCIA.");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("PELICULA................");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("TOTAL A PAGAR.....");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+
+        jButton1.setText("LISTO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, -1, -1));
+
+        lblSala.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblSala.setForeground(new java.awt.Color(255, 255, 255));
+        lblSala.setText("l ");
+        jPanel2.add(lblSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 190, 20));
+
+        lblTanda.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTanda.setForeground(new java.awt.Color(255, 255, 255));
+        lblTanda.setText("l ");
+        jPanel2.add(lblTanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 190, 20));
+
+        lblAcientos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblAcientos.setForeground(new java.awt.Color(255, 255, 255));
+        lblAcientos.setText("l ");
+        jPanel2.add(lblAcientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 190, 20));
+
+        lblTotalPagar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTotalPagar.setForeground(new java.awt.Color(255, 255, 255));
+        lblTotalPagar.setText("l ");
+        jPanel2.add(lblTotalPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 190, 20));
+
+        lblPelicula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblPelicula.setForeground(new java.awt.Color(255, 255, 255));
+        lblPelicula.setText("l ");
+        jPanel2.add(lblPelicula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 190, 20));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/fondo.jpg"))); // NOI18N
+        jPanel2.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 450));
+
+        trampa.setText("jLabel2");
+        jPanel2.add(trampa, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 375, 450));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -84,6 +201,24 @@ public class Factura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fondo;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblAcientos;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblHora;
+    private javax.swing.JLabel lblPelicula;
+    private javax.swing.JLabel lblSala;
+    private javax.swing.JLabel lblTanda;
+    private javax.swing.JLabel lblTotalPagar;
+    public javax.swing.JLabel trampa;
     // End of variables declaration//GEN-END:variables
 }

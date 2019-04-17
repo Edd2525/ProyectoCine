@@ -15,7 +15,8 @@ import javax.swing.ImageIcon;
  */
 public class Entradas extends javax.swing.JFrame {
 
-    int seleccionada;
+    public static int seleccionada;
+    public static int Campos;
     /**
      * Creates new form Entradas
      */
@@ -176,8 +177,9 @@ public class Entradas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btmContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmContinuarActionPerformed
+        Campos = Integer.parseInt(this.cmbCantidad.getSelectedItem().toString());
         Espacios acientos = new Espacios();
-        acientos.setVisible(true);
+        acientos.setVisible(true);; 
         this.dispose();
     }//GEN-LAST:event_btmContinuarActionPerformed
 
@@ -216,7 +218,8 @@ public class Entradas extends javax.swing.JFrame {
 
     private void cmbCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCantidadActionPerformed
         // TODO add your handling code here:
-        this.lblTotal.setText("El total a pagar es: ₡"+(service.getPrecio(seleccionada)*Integer.parseInt(this.cmbCantidad.getSelectedItem().toString())));
+        this.lblTotal.setText("El total a pagar es: ₡"+(service.getPrecio(seleccionada)*Integer.parseInt
+                                                        (this.cmbCantidad.getSelectedItem().toString())));
     }//GEN-LAST:event_cmbCantidadActionPerformed
 
     /**

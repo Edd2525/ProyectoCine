@@ -5,19 +5,62 @@
  */
 package proyectocinescliente;
 
+import java.awt.Button;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author TOSHIBA SATELLITE
  */
-public class Asientos extends javax.swing.JFrame {
-
+public final class Asientos extends javax.swing.JFrame {
+    int x=5;
+    int y=10;
+    private final String path = System.getProperty("user.dir");
+    private final String fondo = "\\src\\PNG\\fondo.jpg";
+    private final String pantalla = "\\src\\PNG\\Pantalla (2).png";
+    Boton [][] asientos = new Boton[x][y];
+    
     /**
      * Creates new form Asientos
      */
     public Asientos() {
         initComponents();
+        this.setSize(550, 400);
+        pantalla();
+        botones();
+        fondo();
+        
+    }
+    public void fondo(){
+        JLabel fondo = new JLabel();
+        ImageIcon icon = new ImageIcon(path+this.fondo);  
+        fondo.setBounds(0, 0, 550, 400);
+        fondo.setIcon(icon);
+        this.add(fondo);
+    }
+    
+    public void pantalla(){
+        JLabel pantalla = new JLabel();
+        ImageIcon icon = new ImageIcon(path+this.pantalla);  
+        pantalla.setBounds(30, 0, 500, 40);
+        pantalla.setIcon(icon);
+        this.add(pantalla);
     }
 
+    public void botones(){
+        int xx=45;
+        for (int i = 0; i < x; i++) {
+            int yy=5;
+            for (int j = 0; j < y; j++) {
+                Boton btn = new Boton(yy,xx);
+                this.asientos[i][j]=btn;
+                this.add(btn);
+                yy=yy+52; 
+            }
+            xx=xx+55;
+        } 
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,17 +70,49 @@ public class Asientos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(550, 400));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jButton1.setText("jButton1");
+
+        jButton2.setText("jButton2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 334, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(342, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap())
         );
 
         pack();
@@ -79,5 +154,8 @@ public class Asientos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,6 +19,18 @@ public class ProyectoCinesCliente {
     public static void main(String[] args) {
         // TODO code application logic here
 //        System.out.println(service.nuevoCliente("Oscar", 402390326, "ocampose", "ocampose"));
+//        service.nuevoCliente("Osca", 40239032, "os", "os");
+//        
+//        service.nuevaPeli("Avengers", 4300, "12:30", "4D", "imagen");
+//        service.nuevaPeli("Avengers", 4300, "2:30", "4D", "imagen");
+//        service.nuevaPeli("Avengers", 3200, "16:30", "3D", "imagen");
+//        service.nuevaPeli("Avengers", 3200, "20:00", "3D", "imagen");
+//        service.nuevaPeli("Avengers", 3200, "21:30", "3D", "imagen");
+//        service.nuevaPeli("Dumbo", 4300, "12:30", "4D", "imagen");
+//        service.nuevaPeli("Dumbo", 3200, "14:00", "3D", "imagen");
+//        service.nuevaPeli("Dumbo", 4300, "17:30", "4D", "imagen");
+//        service.nuevaPeli("Dumbo", 3200, "19:00", "3D", "imagen");
+        
         Login login = new Login();
         login.setVisible(true);
     }

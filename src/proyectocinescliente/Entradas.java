@@ -5,6 +5,7 @@
  */
 package proyectocinescliente;
 
+import static Logica.SOUP.service;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 
@@ -14,6 +15,7 @@ import javax.swing.ImageIcon;
  */
 public class Entradas extends javax.swing.JFrame {
 
+    int seleccionada;
     /**
      * Creates new form Entradas
      */
@@ -21,8 +23,19 @@ public class Entradas extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         super.setTitle("Cinepolio");
+        String Peliculas = service.listaPeli();
+        String[] parts = Peliculas.split("&");
+        int size = parts.length;
+        for (int i = 0; i < size; i++) {
+            this.cmbPeli.addItem(parts[i]);
+        }
+        this.bmtSeleccionarHora.setEnabled(false);
+        this.cmbHora.setEnabled(false);
+        this.cmbCantidad.setEnabled(false);
+//        this.taNota.setEnabled(false);
+        taNota.setEditable(false);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,24 +46,24 @@ public class Entradas extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jComboBoxPeliculas = new javax.swing.JComboBox<>();
-        jComboBoxHora = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jRadioButtonEfectivo = new javax.swing.JRadioButton();
-        jRadioButtonTCredito = new javax.swing.JRadioButton();
+        lblInfo = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jTextFieldCantidadDeBoletosAdultos = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        taNota = new javax.swing.JTextPane();
         jButton1 = new javax.swing.JButton();
         btmContinuar = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblBoleteria = new javax.swing.JLabel();
+        lblimagen = new javax.swing.JLabel();
+        cmbPeli = new javax.swing.JComboBox<>();
+        bmtSeleccionarHora = new javax.swing.JButton();
+        cmbHora = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        taNota1 = new javax.swing.JTextPane();
+        lblTotal = new javax.swing.JLabel();
+        cmbCantidad = new javax.swing.JComboBox<>();
+        fondoblanco = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,56 +71,12 @@ public class Entradas extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBoxPeliculas.setBackground(new java.awt.Color(204, 255, 255));
-        jComboBoxPeliculas.setFont(new java.awt.Font("Ubuntu Condensed", 0, 14)); // NOI18N
-        jComboBoxPeliculas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxPeliculasActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jComboBoxPeliculas, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 41, 130, -1));
-
-        jComboBoxHora.setBackground(new java.awt.Color(204, 255, 255));
-        jComboBoxHora.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxHoraActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jComboBoxHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 100, 30));
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("PRECIO DE CADA BOLETO");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 190, 20));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setText("2D          ₡3200");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 100, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setText("3D          ₡4200");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 100, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setText("FORMA DE PAGO");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 130, 20));
-
-        jRadioButtonEfectivo.setFont(new java.awt.Font("Ubuntu Condensed", 0, 14)); // NOI18N
-        jRadioButtonEfectivo.setText("Efectivo");
-        jRadioButtonEfectivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonEfectivoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jRadioButtonEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 140, -1));
-
-        jRadioButtonTCredito.setFont(new java.awt.Font("Ubuntu Condensed", 0, 14)); // NOI18N
-        jRadioButtonTCredito.setText("Tarjeta de crédito");
-        jRadioButtonTCredito.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonTCreditoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jRadioButtonTCredito, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 140, -1));
+        lblInfo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jPanel1.add(lblInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 130, 20));
 
         jLabel12.setFont(new java.awt.Font("Ubuntu Condensed", 1, 14)); // NOI18N
         jLabel12.setText("Cantidad:");
@@ -117,18 +86,13 @@ public class Entradas extends javax.swing.JFrame {
         jLabel14.setText("Boletos");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, -1, -1));
 
-        jTextFieldCantidadDeBoletosAdultos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCantidadDeBoletosAdultosActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextFieldCantidadDeBoletosAdultos, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 180, 25, -1));
+        jScrollPane1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        jTextPane1.setText("NOTA:  CADA   SALA   TIENE   SUS   ACIENTOS   DEBIDAMENTE   NUMERADOS,   POR   FAVOR   TOMAR   EL   ACIENTO   CORRECTO.");
-        jTextPane1.setToolTipText("");
-        jScrollPane1.setViewportView(jTextPane1);
+        taNota.setText("Nos reservamos el derecho de admision. En caso de canselacion de la pelicula, no hay ningun tipo de reembolso.");
+        taNota.setToolTipText("");
+        jScrollPane1.setViewportView(taNota);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 240, 90));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 210, 70));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 255));
         jButton1.setText("<-- Regresar");
@@ -148,14 +112,53 @@ public class Entradas extends javax.swing.JFrame {
         });
         jPanel1.add(btmContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 350, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("BOLETERÍA");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, -1, -1));
+        lblBoleteria.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblBoleteria.setForeground(new java.awt.Color(255, 255, 255));
+        lblBoleteria.setText("BOLETERÍA");
+        jPanel1.add(lblBoleteria, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, -1, -1));
+        jPanel1.add(lblimagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 240, 270));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/Fondo Blanco.jpg"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 580, 270));
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 240, 270));
+        cmbPeli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbPeliActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbPeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 120, 30));
+
+        bmtSeleccionarHora.setText("Seleccionar");
+        bmtSeleccionarHora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bmtSeleccionarHoraActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bmtSeleccionarHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, 30));
+
+        cmbHora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbHoraActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 120, 30));
+
+        taNota1.setText("NOTA:  CADA   SALA   TIENE   SUS   ACIENTOS   DEBIDAMENTE   NUMERADOS,   POR   FAVOR   TOMAR   EL   ACIENTO   CORRECTO.");
+        taNota1.setToolTipText("");
+        jScrollPane2.setViewportView(taNota1);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 240, 90));
+
+        lblTotal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jPanel1.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 220, 20));
+
+        cmbCantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6" }));
+        cmbCantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCantidadActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, 140, -1));
+
+        fondoblanco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/Fondo Blanco.jpg"))); // NOI18N
+        jPanel1.add(fondoblanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 580, 270));
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/fondo.jpg"))); // NOI18N
@@ -165,22 +168,6 @@ public class Entradas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   
-    private void jComboBoxPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPeliculasActionPerformed
-
-    }//GEN-LAST:event_jComboBoxPeliculasActionPerformed
-
-    private void jRadioButtonEfectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonEfectivoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButtonEfectivoActionPerformed
-
-    private void jRadioButtonTCreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonTCreditoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButtonTCreditoActionPerformed
-
-    private void jTextFieldCantidadDeBoletosAdultosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCantidadDeBoletosAdultosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCantidadDeBoletosAdultosActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Login login = new Login();
@@ -194,9 +181,43 @@ public class Entradas extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btmContinuarActionPerformed
 
-    private void jComboBoxHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxHoraActionPerformed
+    private void cmbPeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPeliActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxHoraActionPerformed
+        String Pelicula = cmbPeli.getSelectedItem().toString();
+        if (!Pelicula.equals("")) {
+            this.bmtSeleccionarHora.setEnabled(true);
+            this.cmbHora.setEnabled(true);
+            this.cmbHora.removeAllItems();
+            String horas = service.buscarPeli(Pelicula);
+            String[] parts = horas.split("&");
+            int size = parts.length;
+            for (int i = 0; i < size; i++) {
+                this.cmbHora.addItem(service.getHora(Integer.parseInt(parts[i])) + " Sala " + parts[i]);
+            }
+        }
+    }//GEN-LAST:event_cmbPeliActionPerformed
+
+    private void bmtSeleccionarHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmtSeleccionarHoraActionPerformed
+        // TODO add your handling code here:
+        if (!cmbHora.getSelectedItem().toString().equals("")) {
+            this.cmbCantidad.setEnabled(true);
+            String Info = cmbHora.getSelectedItem().toString() + " Sala ";
+            String[] parts = Info.split(" Sala ");
+            this.seleccionada=Integer.parseInt(parts[1]);
+            lblInfo.setText(service.getTipo(this.seleccionada) + "    ₡" + service.getPrecio(this.seleccionada));
+        }
+    }//GEN-LAST:event_bmtSeleccionarHoraActionPerformed
+
+    private void cmbHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbHoraActionPerformed
+        // TODO add your handling code here:
+        //////////////////////////////////////
+
+    }//GEN-LAST:event_cmbHoraActionPerformed
+
+    private void cmbCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCantidadActionPerformed
+        // TODO add your handling code here:
+        this.lblTotal.setText("El total a pagar es: ₡"+(service.getPrecio(seleccionada)*Integer.parseInt(this.cmbCantidad.getSelectedItem().toString())));
+    }//GEN-LAST:event_cmbCantidadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,25 +255,25 @@ public class Entradas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bmtSeleccionarHora;
     private javax.swing.JButton btmContinuar;
+    private javax.swing.JComboBox<String> cmbCantidad;
+    private javax.swing.JComboBox<String> cmbHora;
+    private javax.swing.JComboBox<String> cmbPeli;
+    private javax.swing.JLabel fondoblanco;
     private javax.swing.JButton jButton1;
-    public static javax.swing.JComboBox<String> jComboBoxHora;
-    public static javax.swing.JComboBox<String> jComboBoxPeliculas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    public static javax.swing.JRadioButton jRadioButtonEfectivo;
-    public static javax.swing.JRadioButton jRadioButtonTCredito;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JTextField jTextFieldCantidadDeBoletosAdultos;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblBoleteria;
+    private javax.swing.JLabel lblInfo;
+    private javax.swing.JLabel lblTotal;
+    private javax.swing.JLabel lblimagen;
+    private javax.swing.JTextPane taNota;
+    private javax.swing.JTextPane taNota1;
     // End of variables declaration//GEN-END:variables
 }

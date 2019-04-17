@@ -1,8 +1,32 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://service.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.com/">
 
-<xs:element name="cantidadNPeli" type="tns:cantidadNPeli"/>
+<xs:element name="buscarPeli" type="tns:buscarPeli"/>
 
-<xs:element name="cantidadNPeliResponse" type="tns:cantidadNPeliResponse"/>
+<xs:element name="buscarPeliResponse" type="tns:buscarPeliResponse"/>
+
+<xs:element name="getHora" type="tns:getHora"/>
+
+<xs:element name="getHoraResponse" type="tns:getHoraResponse"/>
+
+<xs:element name="getImagen" type="tns:getImagen"/>
+
+<xs:element name="getImagenResponse" type="tns:getImagenResponse"/>
+
+<xs:element name="getNombre" type="tns:getNombre"/>
+
+<xs:element name="getNombreResponse" type="tns:getNombreResponse"/>
+
+<xs:element name="getPrecio" type="tns:getPrecio"/>
+
+<xs:element name="getPrecioResponse" type="tns:getPrecioResponse"/>
+
+<xs:element name="getTipo" type="tns:getTipo"/>
+
+<xs:element name="getTipoResponse" type="tns:getTipoResponse"/>
+
+<xs:element name="listaPeli" type="tns:listaPeli"/>
+
+<xs:element name="listaPeliResponse" type="tns:listaPeliResponse"/>
 
 <xs:element name="login" type="tns:login"/>
 
@@ -16,29 +40,15 @@
 
 <xs:element name="nuevoClienteResponse" type="tns:nuevoClienteResponse"/>
 
-<xs:complexType name="cantidadNPeli">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="cantidadNPeliResponse">
+<xs:complexType name="getTipo">
 <xs:sequence>
-<xs:element name="return" type="xs:int"/>
+<xs:element name="x" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="nuevaPeli">
+<xs:complexType name="getTipoResponse">
 <xs:sequence>
-<xs:element name="nombre" type="xs:string" minOccurs="0"/>
-<xs:element name="precio" type="xs:int"/>
-<xs:element name="hora" type="xs:string" minOccurs="0"/>
-<xs:element name="tipo" type="xs:string" minOccurs="0"/>
-<xs:element name="imagen" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="nuevaPeliResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -55,6 +65,42 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getHora">
+<xs:sequence>
+<xs:element name="x" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getHoraResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getImagen">
+<xs:sequence>
+<xs:element name="x" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getImagenResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPrecio">
+<xs:sequence>
+<xs:element name="x" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPrecioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="nuevoCliente">
 <xs:sequence>
 <xs:element name="nombre" type="xs:string" minOccurs="0"/>
@@ -67,6 +113,56 @@
 <xs:complexType name="nuevoClienteResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNombre">
+<xs:sequence>
+<xs:element name="x" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNombreResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nuevaPeli">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:int"/>
+<xs:element name="hora" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+<xs:element name="imagen" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nuevaPeliResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarPeli">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarPeliResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaPeli">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaPeliResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

@@ -33,5 +33,22 @@
         <delete dir="${build.generated.dir}/jax-wsCache/Service"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/UAPI"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-Service"/>
+    <target name="wsimport-client-Service_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Service_1"/>
+        <property name="wsdl-Service_1" location="xml-resources/web-service-references/Service_1/wsdl/localhost_8080/ServidorCines/Service.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Service_1" destdir="${build.generated.dir}/jax-wsCache/Service_1" wsdl="${wsdl-Service_1}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ServidorCines/Service?wsdl" xnocompile="true" xendorsed="true" package="UAPI">
+            <depends file="${wsdl-Service_1}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Service_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Service_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Service_1" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Service_1"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/UAPI"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-Service, wsimport-client-Service_1"/>
 </project>

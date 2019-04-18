@@ -20,7 +20,7 @@ public class ProyectoCinesCliente {
         // TODO code application logic here
 //        System.out.println(service.nuevoCliente("Oscar", 402390326, "ocampose", "ocampose"));
 //        service.nuevoCliente("Osca", 40239032, "os", "os");
-//        
+//        service.nuevoCliente("fds", 44455, "ed", "ed");
 //        service.nuevaPeli("Avengers", 4300, "12:30", "4D", "imagen");
 //        service.nuevaPeli("Avengers", 4300, "2:30", "4D", "imagen");
 //        service.nuevaPeli("Avengers", 3200, "16:30", "3D", "imagen");
@@ -33,5 +33,7 @@ public class ProyectoCinesCliente {
         
         Login login = new Login();
         login.setVisible(true);
+//        private final String path = System.getProperty("user.dir");
+//        private final String libre = "\\src\\PNG\\Libre.png";
     }
 }

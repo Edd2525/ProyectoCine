@@ -4,35 +4,29 @@
 <xsd:import namespace="http://service.com/" schemaLocation="http://localhost:8080/ServidorCines/Service?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="asignarCampo">
+<part name="parameters" element="tns:asignarCampo"/>
+</message>
+<message name="asignarCampoResponse">
+<part name="parameters" element="tns:asignarCampoResponse"/>
+</message>
+<message name="consultaCampo">
+<part name="parameters" element="tns:consultaCampo"/>
+</message>
+<message name="consultaCampoResponse">
+<part name="parameters" element="tns:consultaCampoResponse"/>
+</message>
 <message name="login">
 <part name="parameters" element="tns:login"/>
 </message>
 <message name="loginResponse">
 <part name="parameters" element="tns:loginResponse"/>
 </message>
-<message name="getPrecio">
-<part name="parameters" element="tns:getPrecio"/>
+<message name="listaPeli">
+<part name="parameters" element="tns:listaPeli"/>
 </message>
-<message name="getPrecioResponse">
-<part name="parameters" element="tns:getPrecioResponse"/>
-</message>
-<message name="getImagen">
-<part name="parameters" element="tns:getImagen"/>
-</message>
-<message name="getImagenResponse">
-<part name="parameters" element="tns:getImagenResponse"/>
-</message>
-<message name="buscarPeli">
-<part name="parameters" element="tns:buscarPeli"/>
-</message>
-<message name="buscarPeliResponse">
-<part name="parameters" element="tns:buscarPeliResponse"/>
-</message>
-<message name="getHora">
-<part name="parameters" element="tns:getHora"/>
-</message>
-<message name="getHoraResponse">
-<part name="parameters" element="tns:getHoraResponse"/>
+<message name="listaPeliResponse">
+<part name="parameters" element="tns:listaPeliResponse"/>
 </message>
 <message name="getTipo">
 <part name="parameters" element="tns:getTipo"/>
@@ -40,17 +34,23 @@
 <message name="getTipoResponse">
 <part name="parameters" element="tns:getTipoResponse"/>
 </message>
+<message name="getHora">
+<part name="parameters" element="tns:getHora"/>
+</message>
+<message name="getHoraResponse">
+<part name="parameters" element="tns:getHoraResponse"/>
+</message>
+<message name="getImagen">
+<part name="parameters" element="tns:getImagen"/>
+</message>
+<message name="getImagenResponse">
+<part name="parameters" element="tns:getImagenResponse"/>
+</message>
 <message name="nuevoCliente">
 <part name="parameters" element="tns:nuevoCliente"/>
 </message>
 <message name="nuevoClienteResponse">
 <part name="parameters" element="tns:nuevoClienteResponse"/>
-</message>
-<message name="listaPeli">
-<part name="parameters" element="tns:listaPeli"/>
-</message>
-<message name="listaPeliResponse">
-<part name="parameters" element="tns:listaPeliResponse"/>
 </message>
 <message name="nuevaPeli">
 <part name="parameters" element="tns:nuevaPeli"/>
@@ -64,38 +64,56 @@
 <message name="getNombreResponse">
 <part name="parameters" element="tns:getNombreResponse"/>
 </message>
+<message name="buscarPeli">
+<part name="parameters" element="tns:buscarPeli"/>
+</message>
+<message name="buscarPeliResponse">
+<part name="parameters" element="tns:buscarPeliResponse"/>
+</message>
+<message name="getPrecio">
+<part name="parameters" element="tns:getPrecio"/>
+</message>
+<message name="getPrecioResponse">
+<part name="parameters" element="tns:getPrecioResponse"/>
+</message>
+<message name="resetearCampo">
+<part name="parameters" element="tns:resetearCampo"/>
+</message>
+<message name="resetearCampoResponse">
+<part name="parameters" element="tns:resetearCampoResponse"/>
+</message>
 <portType name="Service">
+<operation name="asignarCampo">
+<input wsam:Action="http://service.com/Service/asignarCampoRequest" message="tns:asignarCampo"/>
+<output wsam:Action="http://service.com/Service/asignarCampoResponse" message="tns:asignarCampoResponse"/>
+</operation>
+<operation name="consultaCampo">
+<input wsam:Action="http://service.com/Service/consultaCampoRequest" message="tns:consultaCampo"/>
+<output wsam:Action="http://service.com/Service/consultaCampoResponse" message="tns:consultaCampoResponse"/>
+</operation>
 <operation name="login">
 <input wsam:Action="http://service.com/Service/loginRequest" message="tns:login"/>
 <output wsam:Action="http://service.com/Service/loginResponse" message="tns:loginResponse"/>
 </operation>
-<operation name="getPrecio">
-<input wsam:Action="http://service.com/Service/getPrecioRequest" message="tns:getPrecio"/>
-<output wsam:Action="http://service.com/Service/getPrecioResponse" message="tns:getPrecioResponse"/>
-</operation>
-<operation name="getImagen">
-<input wsam:Action="http://service.com/Service/getImagenRequest" message="tns:getImagen"/>
-<output wsam:Action="http://service.com/Service/getImagenResponse" message="tns:getImagenResponse"/>
-</operation>
-<operation name="buscarPeli">
-<input wsam:Action="http://service.com/Service/buscarPeliRequest" message="tns:buscarPeli"/>
-<output wsam:Action="http://service.com/Service/buscarPeliResponse" message="tns:buscarPeliResponse"/>
-</operation>
-<operation name="getHora">
-<input wsam:Action="http://service.com/Service/getHoraRequest" message="tns:getHora"/>
-<output wsam:Action="http://service.com/Service/getHoraResponse" message="tns:getHoraResponse"/>
+<operation name="listaPeli">
+<input wsam:Action="http://service.com/Service/listaPeliRequest" message="tns:listaPeli"/>
+<output wsam:Action="http://service.com/Service/listaPeliResponse" message="tns:listaPeliResponse"/>
 </operation>
 <operation name="getTipo">
 <input wsam:Action="http://service.com/Service/getTipoRequest" message="tns:getTipo"/>
 <output wsam:Action="http://service.com/Service/getTipoResponse" message="tns:getTipoResponse"/>
 </operation>
+<operation name="getHora">
+<input wsam:Action="http://service.com/Service/getHoraRequest" message="tns:getHora"/>
+<output wsam:Action="http://service.com/Service/getHoraResponse" message="tns:getHoraResponse"/>
+</operation>
+<operation name="getImagen">
+<input wsam:Action="http://service.com/Service/getImagenRequest" message="tns:getImagen"/>
+<output wsam:Action="http://service.com/Service/getImagenResponse" message="tns:getImagenResponse"/>
+</operation>
 <operation name="nuevoCliente">
 <input wsam:Action="http://service.com/Service/nuevoClienteRequest" message="tns:nuevoCliente"/>
 <output wsam:Action="http://service.com/Service/nuevoClienteResponse" message="tns:nuevoClienteResponse"/>
-</operation>
-<operation name="listaPeli">
-<input wsam:Action="http://service.com/Service/listaPeliRequest" message="tns:listaPeli"/>
-<output wsam:Action="http://service.com/Service/listaPeliResponse" message="tns:listaPeliResponse"/>
 </operation>
 <operation name="nuevaPeli">
 <input wsam:Action="http://service.com/Service/nuevaPeliRequest" message="tns:nuevaPeli"/>
@@ -105,9 +123,39 @@
 <input wsam:Action="http://service.com/Service/getNombreRequest" message="tns:getNombre"/>
 <output wsam:Action="http://service.com/Service/getNombreResponse" message="tns:getNombreResponse"/>
 </operation>
+<operation name="buscarPeli">
+<input wsam:Action="http://service.com/Service/buscarPeliRequest" message="tns:buscarPeli"/>
+<output wsam:Action="http://service.com/Service/buscarPeliResponse" message="tns:buscarPeliResponse"/>
+</operation>
+<operation name="getPrecio">
+<input wsam:Action="http://service.com/Service/getPrecioRequest" message="tns:getPrecio"/>
+<output wsam:Action="http://service.com/Service/getPrecioResponse" message="tns:getPrecioResponse"/>
+</operation>
+<operation name="resetearCampo">
+<input wsam:Action="http://service.com/Service/resetearCampoRequest" message="tns:resetearCampo"/>
+<output wsam:Action="http://service.com/Service/resetearCampoResponse" message="tns:resetearCampoResponse"/>
+</operation>
 </portType>
 <binding name="ServicePortBinding" type="tns:Service">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="asignarCampo">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="consultaCampo">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="login">
 <soap:operation soapAction=""/>
 <input>
@@ -117,34 +165,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getPrecio">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getImagen">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="buscarPeli">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getHora">
+<operation name="listaPeli">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -162,7 +183,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="nuevoCliente">
+<operation name="getHora">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -171,7 +192,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="listaPeli">
+<operation name="getImagen">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="nuevoCliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -190,6 +220,33 @@
 </output>
 </operation>
 <operation name="getNombre">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="buscarPeli">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getPrecio">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="resetearCampo">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

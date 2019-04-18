@@ -1,8 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://service.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.com/">
 
+<xs:element name="asignarCampo" type="tns:asignarCampo"/>
+
+<xs:element name="asignarCampoResponse" type="tns:asignarCampoResponse"/>
+
 <xs:element name="buscarPeli" type="tns:buscarPeli"/>
 
 <xs:element name="buscarPeliResponse" type="tns:buscarPeliResponse"/>
+
+<xs:element name="consultaCampo" type="tns:consultaCampo"/>
+
+<xs:element name="consultaCampoResponse" type="tns:consultaCampoResponse"/>
 
 <xs:element name="getHora" type="tns:getHora"/>
 
@@ -39,6 +47,10 @@
 <xs:element name="nuevoCliente" type="tns:nuevoCliente"/>
 
 <xs:element name="nuevoClienteResponse" type="tns:nuevoClienteResponse"/>
+
+<xs:element name="resetearCampo" type="tns:resetearCampo"/>
+
+<xs:element name="resetearCampoResponse" type="tns:resetearCampoResponse"/>
 
 <xs:complexType name="getTipo">
 <xs:sequence>
@@ -77,27 +89,45 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getImagen">
+<xs:complexType name="consultaCampo">
 <xs:sequence>
 <xs:element name="x" type="xs:int"/>
+<xs:element name="i" type="xs:int"/>
+<xs:element name="j" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getImagenResponse">
+<xs:complexType name="consultaCampoResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
+<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getPrecio">
+<xs:complexType name="asignarCampo">
 <xs:sequence>
 <xs:element name="x" type="xs:int"/>
+<xs:element name="i" type="xs:int"/>
+<xs:element name="j" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getPrecioResponse">
+<xs:complexType name="asignarCampoResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:int"/>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="resetearCampo">
+<xs:sequence>
+<xs:element name="x" type="xs:int"/>
+<xs:element name="i" type="xs:int"/>
+<xs:element name="j" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="resetearCampoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -144,6 +174,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="listaPeli">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaPeliResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="buscarPeli">
 <xs:sequence>
 <xs:element name="nombre" type="xs:string" minOccurs="0"/>
@@ -156,13 +196,27 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listaPeli">
-<xs:sequence/>
+<xs:complexType name="getImagen">
+<xs:sequence>
+<xs:element name="x" type="xs:int"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listaPeliResponse">
+<xs:complexType name="getImagenResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPrecio">
+<xs:sequence>
+<xs:element name="x" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPrecioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

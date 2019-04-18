@@ -8,6 +8,7 @@ package proyectocinescliente;
 import static Logica.SOUP.service;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import static proyectocinescliente.Asientos.escojer;
 
 /**
  *
@@ -35,6 +36,7 @@ public class Entradas extends javax.swing.JFrame {
         this.cmbCantidad.setEnabled(false);
 //        this.taNota.setEnabled(false);
         taNota.setEditable(false);
+        escojer=0;
     }
 
     /**
@@ -93,7 +95,7 @@ public class Entradas extends javax.swing.JFrame {
         taNota.setToolTipText("");
         jScrollPane1.setViewportView(taNota);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 210, 70));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 210, 80));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 255));
         jButton1.setText("<-- Regresar");
@@ -178,8 +180,8 @@ public class Entradas extends javax.swing.JFrame {
 
     private void btmContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmContinuarActionPerformed
         Campos = Integer.parseInt(this.cmbCantidad.getSelectedItem().toString());
-        Espacios acientos = new Espacios();
-        acientos.setVisible(true);; 
+        Asientos espacios = new Asientos();
+        espacios.setVisible(true);; 
         this.dispose();
     }//GEN-LAST:event_btmContinuarActionPerformed
 

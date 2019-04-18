@@ -63,8 +63,8 @@ public class Factura extends javax.swing.JFrame {
         lblAcientos = new javax.swing.JLabel();
         lblTotalPagar = new javax.swing.JLabel();
         lblPelicula = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
-        trampa = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -120,7 +120,7 @@ public class Factura extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, -1, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, -1, -1));
 
         lblSala.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblSala.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,11 +147,16 @@ public class Factura extends javax.swing.JFrame {
         lblPelicula.setText("l ");
         jPanel2.add(lblPelicula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 190, 20));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/fondo.jpg"))); // NOI18N
-        jPanel2.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 450));
+        jButton2.setText("<--  Login");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
 
-        trampa.setText("jLabel2");
-        jPanel2.add(trampa, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/fondo.jpg"))); // NOI18N
+        jPanel2.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 450));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 375, 450));
 
@@ -164,6 +169,12 @@ public class Factura extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,6 +214,7 @@ public class Factura extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fondo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -219,6 +231,5 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JLabel lblSala;
     private javax.swing.JLabel lblTanda;
     private javax.swing.JLabel lblTotalPagar;
-    public javax.swing.JLabel trampa;
     // End of variables declaration//GEN-END:variables
 }

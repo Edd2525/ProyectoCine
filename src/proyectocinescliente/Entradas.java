@@ -207,8 +207,10 @@ public class Entradas extends javax.swing.JFrame {
             this.cmbCantidad.setEnabled(true);
             String Info = cmbHora.getSelectedItem().toString() + " Sala ";
             String[] parts = Info.split(" Sala ");
-            this.seleccionada=Integer.parseInt(parts[1]);
+            seleccionada=Integer.parseInt(parts[1]);
             lblInfo.setText(service.getTipo(this.seleccionada) + "    ₡" + service.getPrecio(this.seleccionada));
+            ImageIcon icon = new ImageIcon(service.getImagen(seleccionada));
+            this.lblimagen.setIcon(icon);
         }
     }//GEN-LAST:event_bmtSeleccionarHoraActionPerformed
 

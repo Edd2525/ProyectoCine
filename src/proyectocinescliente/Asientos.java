@@ -31,6 +31,7 @@ public final class Asientos extends javax.swing.JFrame {
      */
     public Asientos() {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.setSize(550, 400);
         pantalla();
         botones();

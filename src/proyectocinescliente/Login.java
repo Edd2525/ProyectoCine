@@ -41,6 +41,7 @@ public class Login extends javax.swing.JFrame {
         btmEntrar = new javax.swing.JButton();
         btmSalir = new javax.swing.JButton();
         btmNuevoUsuario = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,6 +101,14 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(btmNuevoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/cinepolio.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 40));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PNG/fondo.jpg"))); // NOI18N
         jLabel1.setToolTipText("");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 300));
@@ -150,6 +159,39 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+          String path = System.getProperty("user.dir");
+          String Avengers = "\\src\\PNG\\Avengers.jpg";
+          String Capitana = "\\src\\PNG\\Capitana.jpg";
+          String Dumbo= "\\src\\PNG\\Dumbo.jpg";
+          String Llorona = "\\src\\PNG\\Llorona.jpg";
+          String Shazam = "\\src\\PNG\\Shazam.jpg";
+
+        service.nuevoCliente("Osca", 40239032, "os", "os");
+        service.nuevoCliente("fds", 44455, "ed", "ed");
+        service.nuevaPeli("Avengers", 4300, "11:00", "3D", path+Avengers);
+        service.nuevaPeli("Avengers", 3200, "12:30", "2D", path+Avengers);
+        service.nuevaPeli("Avengers", 4300, "14:30", "3D", path+Avengers);
+        service.nuevaPeli("Avengers", 3200, "18:30", "2D", path+Avengers);
+        service.nuevaPeli("Dumbo", 3200, "11:00", "2D", path+Dumbo);
+        service.nuevaPeli("Dumbo", 4300, "12:30", "3D", path+Dumbo);
+        service.nuevaPeli("Dumbo", 3200, "14:30", "2D", path+Dumbo);
+        service.nuevaPeli("Dumbo", 4300, "18:30", "3D", path+Dumbo);
+        service.nuevaPeli("Capitana Marvel", 4300, "11:00", "3D", path+Capitana);
+        service.nuevaPeli("Capitana Marvel", 3200, "12:30", "2D", path+Capitana);
+        service.nuevaPeli("Capitana Marvel", 3200, "14:30", "2D", path+Capitana);
+        service.nuevaPeli("Capitana Marvel", 4300, "18:30", "3D", path+Capitana);
+        service.nuevaPeli("La Llorona", 4300, "11:00", "3D", path+Llorona);
+        service.nuevaPeli("La Llorona", 3200, "12:30", "2D", path+Llorona);
+        service.nuevaPeli("La Llorona", 3200, "14:30", "2D", path+Llorona);
+        service.nuevaPeli("La Llorona", 4300, "18:30", "3D", path+Llorona);
+        service.nuevaPeli("Shazam", 4300, "11:00", "3D", path+Shazam);
+        service.nuevaPeli("Shazam", 3200, "12:30", "2D", path+Shazam);
+        service.nuevaPeli("Shazam", 3200, "14:30", "2D", path+Shazam);
+        service.nuevaPeli("Shazam", 4300, "18:30", "3D", path+Shazam);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -189,6 +231,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btmEntrar;
     private javax.swing.JButton btmNuevoUsuario;
     private javax.swing.JButton btmSalir;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

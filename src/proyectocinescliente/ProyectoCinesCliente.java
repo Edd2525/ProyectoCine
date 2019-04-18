@@ -18,18 +18,35 @@ public class ProyectoCinesCliente {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-//        System.out.println(service.nuevoCliente("Oscar", 402390326, "ocampose", "ocampose"));
+//          String path = System.getProperty("user.dir");
+//          String Avengers = "\\src\\PNG\\Avengers.jpg";
+//          String Capitana = "\\src\\PNG\\Capitana.jpg";
+//          String Dumbo= "\\src\\PNG\\Dumbo.jpg";
+//          String Llorona = "\\src\\PNG\\Llorona.jpg";
+//          String Shazam = "\\src\\PNG\\Shazam.jpg";
+//
 //        service.nuevoCliente("Osca", 40239032, "os", "os");
 //        service.nuevoCliente("fds", 44455, "ed", "ed");
-//        service.nuevaPeli("Avengers", 4300, "12:30", "4D", "imagen");
-//        service.nuevaPeli("Avengers", 4300, "2:30", "4D", "imagen");
-//        service.nuevaPeli("Avengers", 3200, "16:30", "3D", "imagen");
-//        service.nuevaPeli("Avengers", 3200, "20:00", "3D", "imagen");
-//        service.nuevaPeli("Avengers", 3200, "21:30", "3D", "imagen");
-//        service.nuevaPeli("Dumbo", 4300, "12:30", "4D", "imagen");
-//        service.nuevaPeli("Dumbo", 3200, "14:00", "3D", "imagen");
-//        service.nuevaPeli("Dumbo", 4300, "17:30", "4D", "imagen");
-//        service.nuevaPeli("Dumbo", 3200, "19:00", "3D", "imagen");
+//        service.nuevaPeli("Avengers", 4300, "11:00", "3D", path+Avengers);
+//        service.nuevaPeli("Avengers", 3200, "12:30", "2D", path+Avengers);
+//        service.nuevaPeli("Avengers", 4300, "14:30", "3D", path+Avengers);
+//        service.nuevaPeli("Avengers", 3200, "18:30", "2D", path+Avengers);
+//        service.nuevaPeli("Dumbo", 3200, "11:00", "2D", path+Dumbo);
+//        service.nuevaPeli("Dumbo", 4300, "12:30", "3D", path+Dumbo);
+//        service.nuevaPeli("Dumbo", 3200, "14:30", "2D", path+Dumbo);
+//        service.nuevaPeli("Dumbo", 4300, "18:30", "3D", path+Dumbo);
+//        service.nuevaPeli("Capitana Marvel", 4300, "11:00", "3D", path+Capitana);
+//        service.nuevaPeli("Capitana Marvel", 3200, "12:30", "2D", path+Capitana);
+//        service.nuevaPeli("Capitana Marvel", 3200, "14:30", "2D", path+Capitana);
+//        service.nuevaPeli("Capitana Marvel", 4300, "18:30", "3D", path+Capitana);
+//        service.nuevaPeli("La Llorona", 4300, "11:00", "3D", path+Llorona);
+//        service.nuevaPeli("La Llorona", 3200, "12:30", "2D", path+Llorona);
+//        service.nuevaPeli("La Llorona", 3200, "14:30", "2D", path+Llorona);
+//        service.nuevaPeli("La Llorona", 4300, "18:30", "3D", path+Llorona);
+//        service.nuevaPeli("Shazam", 4300, "11:00", "3D", path+Shazam);
+//        service.nuevaPeli("Shazam", 3200, "12:30", "2D", path+Shazam);
+//        service.nuevaPeli("Shazam", 3200, "14:30", "2D", path+Shazam);
+//        service.nuevaPeli("Shazam", 4300, "18:30", "3D", path+Shazam);
         
         Login login = new Login();
         login.setVisible(true);
